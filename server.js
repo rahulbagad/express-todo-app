@@ -36,9 +36,8 @@ app.get('/', (req, res) => {
 app.post('/addTask', (req, res) => {
     var file = 'data.json';
     jsonfile.readFile(file, function(err, obj) {
-        var index = obj.length - 1;
-        next_id = obj[index].id;
-        next_id = next_id + 1;
+        var index = obj.length;
+        next_id = index+1;
         var next_task = req.body.task;
         var obj1 = {
             id: next_id,
