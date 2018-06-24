@@ -88,7 +88,7 @@ app.post('/updateTask/:id', (req, res) => {
             obj[update_id - 1].task = taskUpdate;
             //console.log(taskUpdate);
             fs.writeFile('data.json', JSON.stringify(obj), 'utf8');
-            res.render('home.hbs');
+            res.render('home.hbs',{ arr: obj });
         }
     })
 });
@@ -103,7 +103,7 @@ app.get('/delete/:id', (req, res) => {
             delete obj[del_id - 1];
             fs.writeFile('data.json', JSON.stringify(obj), 'utf8');
         }
-        res.render('home.hbs');
+        res.render('home.hbs', {arr: obj});
     })
 });
 
