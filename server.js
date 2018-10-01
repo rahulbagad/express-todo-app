@@ -24,7 +24,6 @@ hbs.registerHelper('getCurrentYear', () => {
 app.get('/', (req, res) => {
     var file = 'data.json';
     jsonfile.readFile(file, function(err, obj) {
-        //console.log(obj);
         for (var i = 0; i < obj.length; i++)
             console.log(obj[i]);
         res.render('home.hbs', {
